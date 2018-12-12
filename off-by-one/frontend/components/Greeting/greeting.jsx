@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-const Greeting = ({ currentUser, logout }) => {
+const Greeting = ({ currentUser, logout, demoLogin }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to="/login" className="login">Login</Link>
-      &nbsp;or&nbsp;
+      <button className="demo-login" onClick={demoLogin}>Demo Login</button>
+      <Link to="/login" className="login">Log In</Link>
       <Link to="/signup" className="signup">Sign up</Link>
-
     </nav>
   );
   const personalGreeting = () => (
@@ -24,4 +21,3 @@ const Greeting = ({ currentUser, logout }) => {
 
 
 export default Greeting;
-//<button className="demo-login" onClick={demologin}>Demo Login</button>
