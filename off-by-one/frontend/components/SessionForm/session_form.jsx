@@ -5,7 +5,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,15 +37,16 @@ class SessionForm extends React.Component {
 
   render() {
 
-    let signupInput;
+    let emailInput;
     let welcomeMessage;
     let endMessage;
+    let endButton;
 
     if(this.props.formType === 'signup') {
-      signupInput = (
+      emailInput = (
         <div>
           <label>
-            Email:
+            Email (required, but never shown)
             <input type="text"
                    value={this.state.email}
                    onChange={this.update('email')}
@@ -53,22 +55,25 @@ class SessionForm extends React.Component {
           </label>
         </div>
       )
-
       welcomeMessage = (
         <label> Create your OBO account. It's free and only takes a minute.</label>
       )
-
       endMessage = (
         <label> Already have an account? {this.props.navLink} </label>
+      )
+      endButton = (
+        <input className="session-submit" type="submit" value="Sign up" />
       )
     } else if (this.props.formType === 'login'){
 
       welcomeMessage = (
         <label> OBO is part of the StackExchange network of 174 Q&A communities.</label>
       )
-
       endMessage = (
         <label> Don't have an account? {this.props.navLink} </label>
+      )
+      endButton = (
+        <input className="session-submit" type="submit" value="Log in" />
       )
     }
 
@@ -81,16 +86,16 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
+            <label>Display Name
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
               />
             </label>
+            {emailInput}
+            <label>Password
             <br/>
-            {signupInput}
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -98,7 +103,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            {endButton}
             <br/>
             {endMessage}
           </div>
