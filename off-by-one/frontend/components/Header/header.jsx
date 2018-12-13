@@ -16,9 +16,7 @@ class Header extends React.Component {
       <ul className="header-nav">
         <li className="header-link">
           <a href="/">
-            <div className="logo-container">
-                Off By One
-            </div>
+            Off By One
           </a>
         </li>
         <GreetingContainer />

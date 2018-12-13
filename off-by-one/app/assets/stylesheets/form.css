@@ -1,3 +1,9 @@
+
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
 .welcome-message {
   margin-left: auto;
   margin-right: auto;
@@ -12,11 +18,11 @@
 }
 
 .session-page{
-  position: absolute;
-  top: 150px;
+  /* position: absolute; */
+  /* top: 150px; */
   width: auto;
   max-width: 300px;
-  left: 45%;
+  /* left: 45%; */
   font-weight: 800;
 }
 
@@ -28,30 +34,39 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  max-width: 178px;
 }
 
 .login-form-box {
   outline: 1px solid silver;
-  padding: 20px;
+  padding: 0 40px 25px 40px;
   /* margin-left: 50px; */
 }
+/*
+label {
+  max-width: 178px;
+} */
 
-input {
-  left: 20px;
-  /* line-height: 1.0; */
+.login-signup-errors {
+  max-width: 178px;
+}
+
+.login-input {
   font-size: 100%;
   padding: 8px;
   height: 18px;
   border: 1px solid #e4e6e8;
   cursor: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
-.login-form-box input:hover{
+.login-input:hover{
     border-color: #07C;
 }
 
-.session-submit {
+.signup-submit {
   border-color: #07C;
   padding: .7em;
   border-radius: 4px;
@@ -60,10 +75,24 @@ input {
   font-weight: 400;
   color: white;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-  text-align: center
+  text-align: center;
+  padding-right: 29px;
 }
 
-.session-submit:hover {
+.login-submit {
+  border-color: #07C;
+  padding: .7em;
+  border-radius: 4px;
+  background-color: #0095ff;
+  width: 20%;
+  font-weight: 400;
+  color: white;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  text-align: center;
+  padding-right: 18px;
+}
+
+.login-submit:hover, .signup-submit:hover {
   background-color: #07C;
 }
 
@@ -72,13 +101,20 @@ input {
   color: blue;
 }
 
+.alt-login-signup-message {
+  /* padding: 30px 40px 30px 40px; */
+  margin-top: 10px;
+  outline: 1px solid silver;
+  padding: 20px;
+}
+
 .demo-login, .signup {
   border-color: #07c;
   color: #FFF;
   background-color: #0095ff;
-  position: relative;
+  /* position: relative; */
   padding: .56em;
-  margin-top: .15em;
+  /* margin-top: .15em; */
   border: 1px solid transparent;
   border-radius: 3px;
   font-size: 0.75em;
@@ -86,9 +122,12 @@ input {
   font-weight: 400;
   line-height: 1.15384615;
   cursor: pointer;
+  height: 20px;
 }
 
 .signup {
+  display: flex;
+  align-items: center;
   margin-left: 10px;
 }
 
@@ -100,6 +139,7 @@ input {
   margin-left: 10px;
   color: blue;
   text-decoration: underline;
+  height: 20px;
 }
 
 .login:hover {

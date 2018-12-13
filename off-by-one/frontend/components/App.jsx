@@ -9,12 +9,14 @@ import LeftSidebar from './LeftSidebar/left_sidebar'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className="top">
     <Header />
-    <LeftSidebar />
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
 
+    <div className="bottom">
+      <LeftSidebar />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+    </div>
   </div>
 );
 

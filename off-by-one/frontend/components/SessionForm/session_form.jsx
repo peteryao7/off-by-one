@@ -11,6 +11,11 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.errors !== this.props.errors)
+    while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -47,6 +52,7 @@ class SessionForm extends React.Component {
         <div>
           <label>
             Email (required, but never shown)
+            <br/>
             <input type="text"
                    value={this.state.email}
                    onChange={this.update('email')}
@@ -63,7 +69,7 @@ class SessionForm extends React.Component {
         <label> Already have an account? {this.props.navLink} </label>
       )
       endButton = (
-        <input className="session-submit" type="submit" value="Sign up" />
+        <input className="signup-submit" type="submit" value="Sign up" />
       )
     } else if (this.props.formType === 'login'){
 
@@ -74,22 +80,28 @@ class SessionForm extends React.Component {
         <label> Don't have an account? {this.props.navLink} </label>
       )
       endButton = (
-        <input className="session-submit" type="submit" value="Log in" />
+        <input className="login-submit" type="submit" value="Log in" />
       )
     }
 
 
     return (
+      <div className="right">
+      <div className="welcome-message">
+        {welcomeMessage}
+      </div>
       <div className="session-page">
-        <div className="welcome-message">
-          {welcomeMessage}
         </div>
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
+            <br/>
+            <div className="login-signup-errors">
             {this.renderErrors()}
+            </div>
             <div className="login-form">
               <br/>
               <label>Display Name
+                <br/>
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -107,12 +119,14 @@ class SessionForm extends React.Component {
                   placeholder="********"
                 />
               </label>
-              <br/>
               {endButton}
-              <br/>
-              {endMessage}
             </div>
           </form>
+          <br/>
+        </div>
+        <div className="alt-login-signup-message">
+
+          {endMessage}
         </div>
       </div>
     );
