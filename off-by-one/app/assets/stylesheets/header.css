@@ -1,0 +1,30 @@
+.login-signup{
+  padding-right: 50px;
+  float: right;
+  position: absolute;
+  bottom: 12px;
+  right: -10px;
+}
+
+.header{
+  position: fixed;
+  min-width: 380px;
+  width: 100%;
+  height: 50px;
+  z-index: 11;
+
+  border-top: 3px solid #F48024;
+  border-bottom: 1px solid silver;
+  background: #fafafb;
+}
+
+.logo-container{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+}

@@ -12,13 +12,12 @@ class Header extends React.Component {
 
   render() {
 
-    return (<header className="nav-bar">
+    return (<header className="header">
       <ul className="header-nav">
         <li className="header-link">
           <a href="/">
             <div className="logo-container">
-              <div className="logo">
-              </div><strong>Off By One!!!</strong>
+                Off By One
             </div>
           </a>
         </li>
