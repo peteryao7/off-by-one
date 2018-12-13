@@ -80,37 +80,40 @@ class SessionForm extends React.Component {
 
 
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="session-page">
+        <div className="welcome-message">
           {welcomeMessage}
-          <br/>
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Display Name
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-                placeholder="J. Doe"
-              />
-            </label>
-            {emailInput}
-            <label>Password
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="********"
-              />
-            </label>
-            <br/>
-            {endButton}
-            <br/>
-            {endMessage}
-          </div>
-        </form>
+        </div>
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <label>Display Name
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                  placeholder="J. Doe"
+                />
+              </label>
+              {emailInput}
+              <label>Password
+              <br/>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  placeholder="********"
+                />
+              </label>
+              <br/>
+              {endButton}
+              <br/>
+              {endMessage}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

@@ -11,8 +11,10 @@ const Greeting = ({ currentUser, logout, demoLogin }) => {
   );
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
+      <div className="loggedin-header">
+        <h2 className="header-name">{currentUser.username}</h2>
+        <button className="header-logout-button" onClick={logout}>Log Out</button>
+      </div>
     </hgroup>
   );
 

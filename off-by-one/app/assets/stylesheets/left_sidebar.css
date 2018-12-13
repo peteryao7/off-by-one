@@ -1,0 +1,38 @@
+.left-sidebar {
+  position: sticky;
+  top: 4em;
+
+  box-sizing: border-box;
+  width: 164px;
+  min-height: 600px;
+  padding: 20px;
+  flex-shrink: 0;
+  padding-right: 19px;
+  border-right: 1px solid #ccc;
+  flex-shrink: 0;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 0 rgba(12,13,14,0.05);
+  transition: box-shadow ease-in-out .1s,transform ease-in-out .1s;
+}
+
+.home-link, a.home-link {
+  color: black;
+  font-size: 15px;
+  font: inherit;
+  font-weight: bold;
+}
+
+.public-header{
+  font-size: 11px;
+  color: #6a737c;
+  margin: 16px 0 4px 0;
+}
+
+.public-ul{
+  padding-left: 1.4em;
+}
+
+.space-li, .users-li, .tags-li, .jobs-li {
+  padding-top: 8px;
+}
