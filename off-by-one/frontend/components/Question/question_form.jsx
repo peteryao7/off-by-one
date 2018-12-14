@@ -17,19 +17,6 @@ class QuestionForm extends React.Component {
     this.navigateToShow = this.navigateToShow.bind(this);
   }
 
-  // show original question's title, body if editing a question
-  // deprecated method, find another method to use?
-  // componentWillReceiveProps(nextProps){
-  //
-  //   if(this.props.formType === 'Edit' && nextProps.question){
-  //     this.setState({ ['title']: nextProps.question.title,
-  //       ['body']:nextProps.question.body,
-  //       ['id']:nextProps.question.id
-  //     });
-  //   }
-  // }
-
-
   navigateToShow() {
     this.props.history.push(`/questions/${this.state.id}`);
   }
@@ -40,56 +27,35 @@ class QuestionForm extends React.Component {
     });
   }
 
-  // editShow(){
-  //   if(this.props.formType === 'Edit'){
-  //     return(
-  //       <div >
-  //         <div className="header-section">
-  //           <h1 className="question-title">{this.state.title}</h1>
-  //         </div>
-  //         <div className="question-body">
-  //           {this.state.body}
-  //         </div>
-  //       </div>
-  //     );
-  //   } else return (<div></div>);
-  // }
-
-  // editHeaderMessage(){
-  //   if(this.props.formType === 'Edit') return (<h1 className="question-title manila">Your edit will not be placed in a queue until it is peer reviewed. We welcome all devisive edits, but please make them infernal. Avoid trivial edits unless cardinally necessary.</h1>);
-  //   else return (<div></div>);
-  // }
   askAQuestion(component){
+    let first_half;
+
+    if (this.props.formType === 'new') {
+      first_half = "Ask a question"
+    } else if (this.props.formType === 'edit') {
+      first_half = "Edit A Question"
+    }
+
     return (
+      <div>
       <div className="content">
-        <div className="single-question-show">
-          <div className="header-section">
-            <div className="question-index-header">
-              <h1 className="question-title">{this.props.formType} A Question</h1>
-            </div>
-          </div>
-          <div className="question-body">{component}</div>
-        </div>
+        <h1 className="question-top-title">{first_half}</h1>
+        <br/>
+      </div>
+
+      <div className="question-body">{component}</div>
       </div>
     );
   }
 
-// {this.editHeaderMessage()} above question-body
-//           {this.editShow()} 72 below question-body
-
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    // if(this.props.formType === 'Edit'){
-    //   this.props.questionAction(this.state);
-    //   this.navigateToShow();
-    // } else{
-      formData.append('question[authorId]', this.state.authorId.id);
-      formData.append('question[title]', this.state.title);
-      formData.append('question[body]', this.state.body);
-      debugger
-      this.props.questionAction(formData);
-    // }
+    formData.append('question[authorId]', this.state.authorId.id);
+    formData.append('question[title]', this.state.title);
+    formData.append('question[body]', this.state.body);
+    debugger
+    this.props.questionAction(formData);
 
   }
 
@@ -97,34 +63,45 @@ class QuestionForm extends React.Component {
   render(){
     const { title, body } = this.state;
 
+    let buttontext;
+    if (this.props.formType === 'new') {
+      buttontext = "Post Your"
+    } else if (this.props.formType === 'edit') {
+      buttontext = "Edit"
+    }
+
     return(
       <div className="new-question-container">
         {this.askAQuestion(
           <form onSubmit={this.handleSubmit}>
-            <label className="question-field">
-              Title
-              <br />
-              <input
-                type="text"
-                value={title}
-                onChange={this.update('title')}
-                className="question-input-field"
-                />
-            </label>
+            <div className="question-title">
+              <label className="title-label">
+                Title
+                <br />
+                <input
+                  type="text"
+                  value={title}
+                  onChange={this.update('title')}
+                  className="title-input-field"
+                  />
+              </label>
+            </div>
+
             <br />
-            <label className="question-field">
+
+            <label className="body-label">
               Body
               <br />
               <div className="question-text-input-area">
                 <textarea
                   value={body}
                   onChange={this.update('body')}
-                  className="question-input-field"
+                  className="body-input-field"
                   />
               </div>
             </label>
             <br />
-            <input type="submit" value={`${this.props.formType} Question`}
+            <input type="submit" value={`${buttontext} Question`}
               className="new-question-button" />
           </form>
         )}

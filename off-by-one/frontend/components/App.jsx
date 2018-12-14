@@ -8,6 +8,8 @@ import SignupFormContainer from './SessionForm/signup_form_container';
 import QuestionFormContainer from './Question/question_form_container';
 import Header from './Header/header';
 import LeftSidebar from './LeftSidebar/left_sidebar'
+// make an empty footer container lol
+import FooterContainer from './Footer/footer_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -17,6 +19,7 @@ const App = () => (
 
     <div className="bottom">
       <LeftSidebar />
+
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -31,10 +34,9 @@ const App = () => (
 );
 
 const Test = () => {
-  return <h1></h1>
+  return <div/>
 }
 
 export default App;
 
-//
-//<Redirect to="/" />
+// <FooterContainer />

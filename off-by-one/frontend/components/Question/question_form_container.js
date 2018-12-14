@@ -5,7 +5,7 @@ import QuestionForm from './question_form';
 
 const mapStateToProps = (state) => ({
   authorId: state.entities.users[state.session.id],
-  formType: 'Ask'
+  formType: 'new'
 });
 
 const mapDispatchToProps = dispatch => ({
