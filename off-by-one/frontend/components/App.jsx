@@ -16,10 +16,11 @@ const App = () => (
 
     <div className="bottom">
       <LeftSidebar />
+      <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-
-
+      <Redirect exact to="/" />
+      </Switch>
     </div>
   </div>
 );
