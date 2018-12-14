@@ -1,8 +1,6 @@
 class Api::QuestionsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
 
-  resources :questions, only: [:index, :show, :create, :update, :destroy]
-
   def index
     @questions = Question.all;
     render :index

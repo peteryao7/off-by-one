@@ -9,7 +9,7 @@ class QuestionForm extends React.Component {
     let body = this.props.question ? this.props.question.body : '';
     this.state={
       id: questionId,
-      userId: this.props.userId,
+      authorId: this.props.authorId.id,
       title: title,
       body: body
     };
@@ -19,15 +19,15 @@ class QuestionForm extends React.Component {
 
   // show original question's title, body if editing a question
   // deprecated method, find another method to use?
-  componentWillReceiveProps(nextProps){
-
-    if(this.props.formType === 'Edit' && nextProps.question){
-      this.setState({ ['title']: nextProps.question.title,
-        ['body']:nextProps.question.body,
-        ['id']:nextProps.question.id
-      });
-    }
-  }
+  // componentWillReceiveProps(nextProps){
+  //
+  //   if(this.props.formType === 'Edit' && nextProps.question){
+  //     this.setState({ ['title']: nextProps.question.title,
+  //       ['body']:nextProps.question.body,
+  //       ['id']:nextProps.question.id
+  //     });
+  //   }
+  // }
 
 
   navigateToShow() {
@@ -40,25 +40,25 @@ class QuestionForm extends React.Component {
     });
   }
 
-  editShow(){
-    if(this.props.formType === 'Edit'){
-      return(
-        <div >
-          <div className="header-section">
-            <h1 className="question-title">{this.state.title}</h1>
-          </div>
-          <div className="question-body">
-            {this.state.body}
-          </div>
-        </div>
-      );
-    } else return (<div></div>);
-  }
+  // editShow(){
+  //   if(this.props.formType === 'Edit'){
+  //     return(
+  //       <div >
+  //         <div className="header-section">
+  //           <h1 className="question-title">{this.state.title}</h1>
+  //         </div>
+  //         <div className="question-body">
+  //           {this.state.body}
+  //         </div>
+  //       </div>
+  //     );
+  //   } else return (<div></div>);
+  // }
 
-  editHeaderMessage(){
-    if(this.props.formType === 'Edit') return (<h1 className="question-title manila">Your edit will not be placed in a queue until it is peer reviewed. We welcome all devisive edits, but please make them infernal. Avoid trivial edits unless cardinally necessary.</h1>);
-    else return (<div></div>);
-  }
+  // editHeaderMessage(){
+  //   if(this.props.formType === 'Edit') return (<h1 className="question-title manila">Your edit will not be placed in a queue until it is peer reviewed. We welcome all devisive edits, but please make them infernal. Avoid trivial edits unless cardinally necessary.</h1>);
+  //   else return (<div></div>);
+  // }
   askAQuestion(component){
     return (
       <div className="content">
@@ -68,26 +68,29 @@ class QuestionForm extends React.Component {
               <h1 className="question-title">{this.props.formType} A Question</h1>
             </div>
           </div>
-          {this.editHeaderMessage()}
           <div className="question-body">{component}</div>
-          {this.editShow()}
         </div>
       </div>
     );
   }
 
+// {this.editHeaderMessage()} above question-body
+//           {this.editShow()} 72 below question-body
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    if(this.props.formType === 'Edit'){
-      this.props.questionAction(this.state);
-      this.navigateToShow();
-    } else{
-      formData.append('question[userId]', this.state.userId);
+    // if(this.props.formType === 'Edit'){
+    //   this.props.questionAction(this.state);
+    //   this.navigateToShow();
+    // } else{
+      formData.append('question[authorId]', this.state.authorId.id);
       formData.append('question[title]', this.state.title);
       formData.append('question[body]', this.state.body);
+      debugger
       this.props.questionAction(formData);
-    }
+    // }
+
   }
 
 
