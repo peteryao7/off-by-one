@@ -38,9 +38,9 @@
 }
 
 .login-form-box {
-  outline: 1px solid silver;
+  border: 1px solid silver;
+  border-radius: 5px;
   padding: 0 40px 25px 40px;
-  /* margin-left: 50px; */
 }
 /*
 label {
@@ -104,8 +104,10 @@ label {
 .alt-login-signup-message {
   /* padding: 30px 40px 30px 40px; */
   margin-top: 10px;
-  outline: 1px solid silver;
+  border: 1px solid silver;
+  border-radius: 5px;
   padding: 20px;
+
 }
 
 .demo-login, .signup {

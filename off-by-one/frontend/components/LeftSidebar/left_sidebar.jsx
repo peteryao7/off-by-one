@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 /*
-  off by one goes to questions index
-  users goes to users index
-  tags goes to tags index if I reach it
-  jobs goes to an extra jobs page
+  change to links instead of ordered list later
+  off by one -> questions index
+  users goes -> users index
+  tags goes -> tags index if I reach it
+  jobs -> some extra jobs page
 */
 
 const LeftSidebar = navLinks => (
