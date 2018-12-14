@@ -18,11 +18,13 @@ const App = () => (
       <LeftSidebar />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/questions/ask"
-        component={QuestionFormContainer} />
+
 
     </div>
   </div>
 );
 
 export default App;
+
+// <ProtectedRoute exact path="/questions/ask"
+//   component={QuestionFormContainer} />
