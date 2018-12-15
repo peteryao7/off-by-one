@@ -26,6 +26,14 @@
   font-weight: 800;
 }
 
+.login-signup-errors {
+  position: absolute;
+  right: 10%;
+  top: 300px;
+  font-size: 13px;
+  background: #C04848;
+}
+
 .login-form-container {
   /* text-align: center; */
 }

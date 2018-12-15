@@ -4,7 +4,7 @@ import {createQuestion} from '../../actions/question_actions';
 import QuestionForm from './question_form';
 
 const mapStateToProps = (state) => ({
-  authorId: state.entities.users[state.session.id],
+  authorId: state.entities.users[state.session.id].id,
   formType: 'new'
 });
 

@@ -95,9 +95,6 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <br/>
-            <div className="login-signup-errors">
-            {this.renderErrors()}
-            </div>
             <div className="login-form">
               <br/>
               <label>Display Name
@@ -124,6 +121,11 @@ class SessionForm extends React.Component {
           </form>
           <br/>
         </div>
+
+        <div className="login-signup-errors">
+          {this.renderErrors()}
+        </div>
+
         <div className="alt-login-signup-message">
 
           {endMessage}

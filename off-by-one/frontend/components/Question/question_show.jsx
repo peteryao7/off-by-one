@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
 import Header from '../Header/header';
-// import {timeSinceUpdate} from '../../util/calculation_utils';
-
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -26,7 +24,6 @@ class QuestionShow extends React.Component{
       this.props.history.push('/');
     } else {
       this.setState({ ['buttonErrors']: [ 'Can only delete your own questions' ]})
-      // window.setTimeout(() => this.setState({['buttonErrors']: []}), 4000);
     }
   }
 
@@ -62,7 +59,6 @@ class QuestionShow extends React.Component{
             <div></div>
             {this.props.question.body}
             <br />
-            {this.questionFooter()}
           </div>
       </div>
     </div>
@@ -85,6 +81,7 @@ class QuestionShow extends React.Component{
         <div className="single-question-show">
           {this.questionHeader()}
           {this.questionBody()}
+          {this.questionFooter()}
         </div>
       </div>
     );

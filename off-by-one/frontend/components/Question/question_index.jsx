@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
-import FilterForm from '../search/filter_form';
 import { Link } from 'react-router-dom';
 
 
@@ -18,20 +17,6 @@ class QuestionIndexFooter extends React.Component {
 
   }
 
-  componentDidMount(){
-    this.props.updateFilter('limit', this.state.limit);
-    this.props.updateFilter('offset', this.state.offset);
-  }
-
-
-
-  handleSearchClick(offs){
-    // this.setState({ limit: lim });
-    this.setState({ offset: offs })
-    // this.props.updateFilter('limit', lim);
-    this.props.updateFilter('offset', offs)
-  }
-
   button_element(pos, increment, length){
     let dist = Math.floor(length / increment);
     return (
@@ -39,7 +24,6 @@ class QuestionIndexFooter extends React.Component {
         {Math.floor((dist) * ((pos + 1 + increment) / length))}
       </button>
     );
-    // {pos} - {pos + increment} // <- this was awesome but people don't want to use it
   }
 
   button_range(length){

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
-import {updateFilter} from '../../actions/filter_actions';
-import { questionsArray} from '../../reducers/selectors';
+import { questionsArray } from '../../reducers/selectors';
   import QuestionIndexFooter from './question_index_footer';
 
 const mapStateToProps = (state, {total}) => ({

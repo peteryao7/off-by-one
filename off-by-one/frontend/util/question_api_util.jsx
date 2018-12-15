@@ -15,11 +15,13 @@ export const fetchQuestion = questionId => (
   })
 );
 
-export const createQuestion = question => (
+export const createQuestion = formData => (
   $.ajax({
     method: 'POST',
     url: 'api/questions',
-    data: { question }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 );
 
