@@ -16,7 +16,14 @@ class Header extends React.Component {
       <ul className="header-nav">
         <li className="header-link">
           <a href="/">
-            Off By One
+          <div className="logo-all">
+            <div className="logo-pic">
+            <img src="https://img.icons8.com/metro/1600/stackoverflow.png"/>
+            </div>
+            <div className="logo-text">
+            Off By <strong>One</strong>
+            </div>
+          </div>
           </a>
         </li>
         <GreetingContainer />

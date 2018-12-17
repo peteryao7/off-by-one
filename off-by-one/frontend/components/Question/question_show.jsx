@@ -17,6 +17,12 @@ class QuestionShow extends React.Component{
     this.props.fetchQuestion(this.props.questionId);
   }
 
+  componentDidUpdate(oldProps) {
+    if (oldProps.match.params.questionId !== this.props.match.params.questionId) {
+      this.props.fetchQuestion(this.props.questionId);
+    }
+  }
+
   deleteQuestion(){
     if(this.props.user && this.props.question.user_id === this.props.user.id)
     {

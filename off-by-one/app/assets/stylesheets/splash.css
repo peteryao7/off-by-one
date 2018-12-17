@@ -1,0 +1,109 @@
+.splash-login-form{
+  width: 400px;
+}
+
+.splash-signup-container{
+  display: flex;
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.splash-page{
+  display: flex;
+  background-image: url("blue-background-13.jpg");
+}
+
+input.splash-login-input{
+  color: black;
+  background-color: snow;
+  display: inline-flex;
+  height: 2.25rem;
+  width: 12rem;
+  padding-left: 8px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+}
+
+input[type=submit].splash-session-submit{
+  margin-left: 16px;
+  background: #07c;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  height: 2rem;
+  padding: 2px;
+}
+
+input.splash-login-input:hover, input.splash-login-input:focus{
+  border-left: 0.3px outset #9ec0d8ea;
+}
+
+.splash-form-label{
+  left: 20px;
+  margin-bottom: 10px;
+  border-radius: 2px 0 0 2px;
+  -webkit-flex-basis: 30%;
+  line-height: 41px;
+  max-width: 125px;
+  white-space: nowrap;
+  padding: 0 16px;
+  font-size: 16px;
+  border: 0;
+  display: inline-flex;
+  color: black;
+
+  width: 100px;
+  height: 36px;
+}
+
+.splash-explanation-text{
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+  padding-left: 10%;
+  padding-right: 42px;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  text-shadow: 0 0 4px black;
+  width: 60%;
+  height: 60%;
+}
+
+.splash-explanation-text h3 { font-size: 22px;}
+
+div.splash-form-text{
+  font-size:14px;
+  color: black;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.splash-form-text {
+  background-color: lightgrey;
+  min-width: 4rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #07c;
+}
+
+.main-div {
+  width: 100%;
+  overflow: scroll;
+}
+
+.splash-explanation-text p {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 700px){
+  .splash-explanation-text{
+    width: 100%;
+  }
+  .splash-signup-container, .splash-login-form{
+    display: none;
+  }
+  .old-hero {
+    top: 52px;
+
+  }
+}

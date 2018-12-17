@@ -5,8 +5,8 @@
 }
 
 .right {
-  /* height: Calc(100vh - 54px); */
-  width: Calc(100% - 164px);
+  height: Calc(100vh - 54px);
+  /* width: Calc(100% - 164px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,6 @@
 
 .left-sidebar {
   position: sticky;
-  top: 4em;
 
   box-sizing: border-box;
   width: 164px;
@@ -29,15 +28,6 @@
   position: relative;
   box-shadow: 0 0 0 rgba(12,13,14,0.05);
   transition: box-shadow ease-in-out .1s,transform ease-in-out .1s; */
-}
-
-
-
-.home-link, a.home-link {
-  color: black;
-  font-size: 15px;
-  font: inherit;
-  font-weight: bold;
 }
 
 .public-header{

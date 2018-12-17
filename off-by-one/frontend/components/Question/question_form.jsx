@@ -34,8 +34,12 @@ class QuestionForm extends React.Component {
     formData.append('question[authorId]', this.state.authorId);
     formData.append('question[title]', this.state.title);
     formData.append('question[body]', this.state.body);
-    this.props.questionAction(formData);
-    this.navigateToShow();
+    this.props.questionAction(formData).then(
+      res => {
+        this.props.history.push(`/questions/${res.question.id}`)
+      }
+    );
+    // this.navigateToShow();
   }
 
 

@@ -17,9 +17,11 @@ const LeftSidebar = navLinks => (
       <div className="public-header grey-beige">PUBLIC</div>
       <ul className="public-ul">
         <li className="space-li">
+        <Link to="/questions" className="grey-beige">
               <div className="logo">
                 off by one
               </div>
+            </Link>
         </li>
         <li className="users-li">
           Users
@@ -28,7 +30,9 @@ const LeftSidebar = navLinks => (
           Tags
         </li>
         <li className="jobs-li">
+          <Link to="/jobs" className="grey-beige">
           Jobs
+          </Link>
         </li>
       </ul>
   </div>

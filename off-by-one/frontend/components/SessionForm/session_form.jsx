@@ -52,14 +52,13 @@ class SessionForm extends React.Component {
         <div>
           <label>
             Email (required, but never shown)
-            <br/>
+          </label>
             <input type="text"
                    value={this.state.email}
                    onChange={this.update('email')}
                    className="login-input"
                    placeholder="you@example.org"
                    />
-          </label>
         </div>
       )
       welcomeMessage = (
@@ -97,25 +96,21 @@ class SessionForm extends React.Component {
             <br/>
             <div className="login-form">
               <br/>
-              <label>Display Name
-                <br/>
+              <label>Display Name</label>
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
                   placeholder="J. Doe"
                 />
-              </label>
               {emailInput}
-              <label>Password
-              <br/>
+              <label>Password</label>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
                   placeholder="********"
                 />
-              </label>
               {endButton}
             </div>
           </form>
