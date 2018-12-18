@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
-import Header from '../Header/header';
+import NewAnswerFormContainer from '../Answer/new_answer_form_container';
+
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -15,6 +16,7 @@ class QuestionShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchQuestion(this.props.questionId);
+    this.props.fetchAnswers({question_id: this.props.questionId});
   }
 
   componentDidUpdate(oldProps) {
@@ -42,6 +44,7 @@ class QuestionShow extends React.Component{
   // by { this.props.question.user ? this.props.question.user.username : '__'}
 
   render() {
+    // debugger
     if (this.props.question.title) {
 
       return(
@@ -68,7 +71,14 @@ class QuestionShow extends React.Component{
             delete
           </button>
           <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
+
+          &nbsp;&nbsp;&nbsp;
+          <div className="author"> asked on { this.props.question.created_at }&nbsp;
+            by { this.props.question.user ? this.props.question.user.username : '__'}
+          </div>
         </div>
+
+        <NewAnswerFormContainer questionId={this.props.questionId} />
 
         </div>
       </div>

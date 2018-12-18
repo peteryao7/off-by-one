@@ -10,12 +10,12 @@ export const receiveAnswers = answers => ({
   answers
 });
 
-export const receiveAnswer = (answer) => ({
+export const receiveAnswer = answer => ({
   type: RECEIVE_ANSWER,
   answer
 });
 
-export const removeAnswer = (answerId) => ({
+export const removeAnswer = answerId => ({
   type: REMOVE_ANSWER,
   answerId
 });

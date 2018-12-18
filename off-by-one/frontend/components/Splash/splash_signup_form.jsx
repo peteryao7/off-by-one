@@ -17,11 +17,6 @@ class SplashSignupForm extends React.Component {
      while (this.props.errors.length > 0) {this.props.errors.pop();}
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.errors !== this.props.errors)
-     while (this.props.errors.length > 0) {this.props.errors.pop();}
-  }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -32,6 +27,28 @@ class SplashSignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.errors !== this.props.errors)
+      while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.errors !== this.props.errors)
+      while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -72,6 +89,11 @@ class SplashSignupForm extends React.Component {
             <input className="splash-session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
+        <div className="inner-error" >
+          <div className="login-signup-errors-splash">
+            {this.renderErrors()}
+          </div>
+        </div>
       </div>
     );
   }

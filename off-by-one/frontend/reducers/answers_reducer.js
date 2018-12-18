@@ -7,15 +7,16 @@ import {
 } from '../actions/answer_actions';
 
 const answerReducer = (state = {}, action) => {
+  let newState;
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ANSWERS:
       return action.answers;
     case RECEIVE_ANSWER:
-      const newAnswer = { [action.answer.id]: action.answer}
-      return merge({}, state, newAnswer);
+      newState = { [action.answer.id]: action.answer}
+      return merge({}, state, newState);
     case REMOVE_ANSWER:
-      let newState = merge({}, state);
+      newState = merge({}, state);
       delete newState[action.answerId];
       return newState;
     default:

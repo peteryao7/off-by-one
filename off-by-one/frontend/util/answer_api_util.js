@@ -25,8 +25,8 @@ export const createAnswer = formData => (
 
 export const updateAnswer = answer => (
   $.ajax({
-    url: `api/answers/${answer.id}`,
     method: 'PATCH',
+    url: `api/answers/${answer.id}`,
     data: {answer}
   })
 );

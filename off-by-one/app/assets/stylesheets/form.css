@@ -26,6 +26,7 @@
 .login-signup-errors {
   position: absolute;
   right: 12%;
+  max-width: 178px;
   top: 250px;
   margin: 20px;
   font-size: 18px;
@@ -61,10 +62,6 @@
   border: 1px solid silver;
   border-radius: 5px;
   padding: 0 40px 25px 40px;
-}
-
-.login-signup-errors {
-  max-width: 178px;
 }
 
 .login-input {

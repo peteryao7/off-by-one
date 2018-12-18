@@ -13,9 +13,13 @@
 class Api::AnswersController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
 
+  def index
+    @answers = bounds ? Answer.in_bounds(bounds) : "error - no answers or incorrect request"
+    render :index
+  end
+
   def create
     @answer = current_user.answers.new(answer_params)
-
     if @answer.save
       render :show
     else
@@ -23,9 +27,12 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+  def show
+    @answer = Answer.find(params[:id])
+  end
+
   def update
     @answer = Answer.find(params[:id])
-
     if @answer && @answer.update_attributes(answer_params)
       render :show
     else
@@ -39,7 +46,7 @@ class Api::AnswersController < ApplicationController
       @answer.destroy
       render :show
     else
-      render json: "Cannot delete others answers!", status: 422
+      render json: "Can only delete your own answers", status: 422
     end
   end
 
@@ -48,8 +55,8 @@ class Api::AnswersController < ApplicationController
     params.require(:answer).permit(:author_id, :body, :question_id)
   end
 
-  # def bounds
-  #   params[:bounds]
-  # end
+  def bounds
+    params[:bounds]
+  end
 
 end

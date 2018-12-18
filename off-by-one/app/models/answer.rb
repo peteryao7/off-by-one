@@ -25,12 +25,12 @@ class Answer < ApplicationRecord
   def self.in_bounds(bounds)
     author_id = bounds[:author_id]
     question_id = bounds[:question_id]
-    if user_id
+    if author_id
       self.where("author_id = ?", author_id)
     elsif question_id
       self.where("question_id = ?", question_id)
     else
-      "incomplete arguments error in Answer request"
+      "incomplete args error in Answer request"
     end
   end
 end

@@ -78,6 +78,7 @@
 }
 
 .question-body-footer{
+  display: flex;
   font-size: 10px;
 }
 

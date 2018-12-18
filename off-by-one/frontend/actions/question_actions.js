@@ -10,12 +10,12 @@ export const receiveQuestions = questions => ({
   questions
 });
 
-export const receiveQuestion = (question) => ({
+export const receiveQuestion = question => ({
   type: RECEIVE_QUESTION,
   question
 });
 
-export const removeQuestion = (question) => ({
+export const removeQuestion = question => ({
   type: REMOVE_QUESTION,
   question
 });

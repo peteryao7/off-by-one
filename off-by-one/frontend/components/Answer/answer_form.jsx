@@ -11,7 +11,7 @@ class AnswerForm extends React.Component {
     this.state={
       id: answerId,
       questionId: questionId,
-      userId: this.props.user ? this.props.user.id : null,
+      authorId: this.props.user ? this.props.user.id : null,
       body: body,
       buttonErrors: []
     };
@@ -22,7 +22,7 @@ class AnswerForm extends React.Component {
   componentWillReceiveProps(nextProps){
     if(this.props.formType === 'Edit' && nextProps.answer){
       this.setState({
-        ['userId']:nextProps.answer.user_id,
+        ['authorId']:nextProps.answer.user_id,
         ['questionId']:nextProps.answer.question_id,
         ['body']:nextProps.answer.body,
         ['id']:nextProps.answer.id
@@ -52,42 +52,47 @@ class AnswerForm extends React.Component {
   }
 
   editHeaderMessage(){
-    if(this.props.formType === 'Edit') return (<h1 className="question-title manila">Your edit will not be placed in a queue until it is peer reviewed. We welcome all devisive edits, but please make them infernal. Avoid trivial edits unless cardinally necessary.</h1>);
+    if(this.props.formType === 'Edit') return (<h1 className="edit-header-message">
+    Your edit will be placed in a queue until it is peer reviewed.
+    <br/><br/>
+    We welcome all constructive edits, but please make them substantial. Avoid trivial edits unless absolutely necessary.</h1>);
     else return (<div></div>);
   }
-  answerQuestion(component){
-    const header = this.props.formType === 'Edit' ? "Edit Answer" : "Answer"
-    //  className="content"
-    return (
-      <>
 
-          <div className="header-section">
-            <div className="question-index-header">
-              <h1 className="question-title">{header}</h1>
-            </div>
+
+  answerQuestion(component){
+    const header = this.props.formType === 'Edit' ? "Edit Answer" : "Your Answer"
+
+    return (
+      <div>
+        <div className="header-section">
+          <div className="question-index-header">
+            <h1 className="question-title">{header}</h1>
           </div>
+        </div>
+
         <div className="single-question-show">
           {this.editHeaderMessage()}
           <div className="question-body">{component}</div>
           {this.editShow()}
         </div>
-      </>
+      </div>
     );
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.userId){
+    if (this.state.authorId){
       if(this.props.formType === 'Edit'){
         this.props.answerAction({
           id: this.state.id,
           question_id: this.state.questionId,
           body: this.state.body,
         });
-        this.props.resetRenderEditState();
       } else {
         const formData = new FormData();
-        formData.append('answer[user_id]', this.state.userId);
+        formData.append('answer[id]', this.state.id);
+        formData.append('answer[author_id]', this.state.authorId);
         formData.append('answer[question_id]', this.state.questionId);
         formData.append('answer[body]', this.state.body);
         this.props.answerAction(formData);
