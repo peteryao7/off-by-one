@@ -16,8 +16,7 @@
 
 .title-footer, .home-link, a.home-link, .side-links {
   font-size: 15px;
-  font: inherit;
-  font-weight: bold;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
 .site-footer-container .space-li-header {

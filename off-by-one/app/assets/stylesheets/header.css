@@ -49,8 +49,9 @@
 
 .header-logout-button {
   border-color: #07c;
-  color: #FFF;
+  color: white;
   background-color: #0095ff;
+  box-shadow: inset 0 1px 0 #66bfff;
   position: relative;
   padding: .56em;
   border: 1px solid transparent;

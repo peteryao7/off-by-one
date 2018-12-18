@@ -10,7 +10,6 @@ const mapStateToProps = (state, {match}) => {
   const user = state.entities.users[state.session.id];
   const questionId = parseInt(match.params.questionId);
   const question = selectQuestion(state.entities, questionId);
-
   return {
     user,
     questionId,

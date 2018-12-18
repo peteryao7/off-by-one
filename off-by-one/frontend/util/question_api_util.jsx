@@ -25,13 +25,15 @@ export const createQuestion = formData => (
   })
 );
 
-export const updateQuestion = question => (
-  $.ajax({
+export const updateQuestion = formData => {
+  return ($.ajax({
     method: 'PATCH',
-    url: `api/questions/${question.id}`,
-    data: { question }
-  })
-);
+    url: `api/questions/${formData.get("question[id]")}`,
+    data: formData,
+    contentType: false,
+    processData: false
+  }))
+};
 
 export const deleteQuestion = questionId => (
   $.ajax({

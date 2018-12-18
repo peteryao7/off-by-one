@@ -41,5 +41,7 @@
 }
 
 .space-li, .users-li, .tags-li, .jobs-li {
-  padding-top: 8px;
+  padding-top: 12px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  color: #535a60;
 }

@@ -1,21 +1,22 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {updateQuestion} from '../../actions/question_actions';
-import QuestionForm from './question_form';
+import { fetchQuestion } from '../../actions/question_actions';
+import { selectQuestion } from '../../reducers/selectors';
+import QuestionEdit from './question_edit';
 
-const mapStateToProps = (state, {question}) => {
+const mapStateToProps = (state, {match}) => {
+  const questionId = parseInt(match.params.questionId);
   return {
-    authorId: state.entities.users[state.session.id].id,
-    formType: 'edit',
-    question
+    questionId,
+    question: state.entities.questions[match.params.questionId]
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  questionAction: question => dispatch(updateQuestion(question))
+  fetchQuestion: id => dispatch(fetchQuestion(id))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(QuestionForm);
+)(QuestionEdit);

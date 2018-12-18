@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import SplashSignupContainer from './splash_container';
 
 const RenderSplash = ({user}) => {
-
+  
   if(!user)
   {
     return (

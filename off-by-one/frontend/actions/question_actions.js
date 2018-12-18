@@ -15,9 +15,9 @@ export const receiveQuestion = (question) => ({
   question
 });
 
-export const removeQuestion = (questionId) => ({
+export const removeQuestion = (question) => ({
   type: REMOVE_QUESTION,
-  questionId
+  question
 });
 
 export const fetchQuestions = () => dispatch => (

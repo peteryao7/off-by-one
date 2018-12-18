@@ -3,11 +3,12 @@ import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import GreetingContainer from './Greeting/greeting_container';
 import LoginFormContainer from './SessionForm/login_form_container';
-import JobsContainer from './jobs/jobs_container';
+import JobsContainer from './Jobs/jobs_container';
 import SignupFormContainer from './SessionForm/signup_form_container';
 import QuestionShowContainer from './Question/question_show_container';
 import QuestionEditContainer from './Question/question_edit_container';
 import QuestionFormContainer from './Question/question_form_container';
+import QuestionIndexContainer from './Question/question_index_container';
 import Header from './Header/header';
 import LeftSidebar from './LeftSidebar/left_sidebar'
 import FooterContainer from './Footer/footer_container'
@@ -33,7 +34,8 @@ const App = () => (
             component={QuestionEditContainer} />
           <Route exact path="/jobs" component={JobsContainer} />
           <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
-          <AuthRoute exact path ="/" component={Test} />
+          <Route exact path="/questions" component={QuestionIndexContainer} />
+          <AuthRoute exact path ="/" component={RenderSplash} />
           <Redirect to="/login" />
         </Switch>
         <FooterContainer />
@@ -41,11 +43,5 @@ const App = () => (
     </div>
   </div>
 );
-
-const Test = () => {
-  return (
-    <Route exact path="/" component={RenderSplash} />
-  )
-}
 
 export default App;

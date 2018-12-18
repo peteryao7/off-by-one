@@ -24,7 +24,7 @@ class QuestionShow extends React.Component{
   }
 
   deleteQuestion(){
-    if(this.props.user && this.props.question.user_id === this.props.user.id)
+    if(this.props.question.author_id === this.props.user.id)
     {
       this.props.deleteQuestion(this.props.questionId);
       this.props.history.push('/');
@@ -33,22 +33,6 @@ class QuestionShow extends React.Component{
     }
   }
 
-  questionFooter(){
-    const deleteButton =
-    this.props.user && this.props.user.id === this.props.question.user_id ?
-    (<button onClick={this.deleteQuestion} className="footer-button">
-        delete
-      </button>) : null;
-
-    return(
-      <div className="question-body-footer">
-        <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
-        <div className="one-em-padding"></div>
-        <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
-        {deleteButton}
-    </div>
-    );
-  }
 
   // <div className="one-em-padding"></div>
   // posted {timeSinceUpdate(this.props.question.created_at)} hr:min:secs ago
@@ -57,40 +41,44 @@ class QuestionShow extends React.Component{
   // <div className="one-em-padding"></div>
   // by { this.props.question.user ? this.props.question.user.username : '__'}
 
-  questionBody(){
-    return(
-      <div className="question-body">
-        <div className="float-display">
-          <div className="question-body remov-border-of-el">
-            <div></div>
-            {this.props.question.body}
-            <br />
-          </div>
-      </div>
-    </div>
-  );
-  }
-
-  questionHeader(){
-    return(
-      <div className="header-section">
-        <div className="question-index-header">
-          <h1 className="question-title">{this.props.question.title}</h1>
-        </div>
-        <Link to="/questions/ask" className="link-button">Ask Question</Link>
-      </div>
-    );
-  }
   render() {
-    return(
+    if (this.props.question.title) {
+
+      return(
       <div className="content">
         <div className="single-question-show">
-          {this.questionHeader()}
-          {this.questionBody()}
-          {this.questionFooter()}
+
+          <div className="header-section-question">
+            <div className="question-index-header">
+              <h1 className="question-title-show">{this.props.question.title}</h1>
+            </div>
+            <Link to="/questions/ask" className="link-button">Ask Question</Link>
+          </div>
+
+          <div className="question-body">
+            <div className="float-display">
+                {this.props.question.body}
+                <br />
+            </div>
+          </div>
+
+        <div className="question-body-footer">
+          <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>&nbsp;&nbsp;&nbsp;
+          <button onClick={this.deleteQuestion} className="footer-button">
+            delete
+          </button>
+          <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
+        </div>
+
         </div>
       </div>
-    );
+    ) } else {
+      return (<div className="error-question-page">
+      <div className="error-question"> ERROR 404 </div> <br />
+      <div className="error-question-message"> No question exists! </div> <br />
+      <Link to="/" className="no-question-link"> Back to homepage.</Link> <br />
+      </div>)
+    }
   }
 }
 

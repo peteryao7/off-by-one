@@ -31,6 +31,7 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    formData.append('question[id]', this.state.id);
     formData.append('question[authorId]', this.state.authorId);
     formData.append('question[title]', this.state.title);
     formData.append('question[body]', this.state.body);
@@ -39,9 +40,14 @@ class QuestionForm extends React.Component {
         this.props.history.push(`/questions/${res.question.id}`)
       }
     );
-    // this.navigateToShow();
   }
 
+  editHeaderMessage(){
+    if(this.props.formType === 'Edit') return (<h1 className="edit-header-message">Your edit will be placed in a queue until it is peer reviewed.
+      <br/><br/>
+      We welcome all constructive edits, but please make them substantial. Avoid trivial edits unless absolutely necessary.</h1>);
+    else return (<div></div>);
+  }
 
   render(){
     const { title, body } = this.state;
@@ -50,17 +56,17 @@ class QuestionForm extends React.Component {
     let first_half;
 
     if (this.props.formType === 'new') {
-      first_half = "Ask a question";
+      first_half = "Ask A Question";
       buttontext = "Post Your";
-    } else if (this.props.formType === 'edit') {
+    } else if (this.props.formType === 'Edit') {
       buttontext = "Edit";
-      first_half = "Edit A Question";
     }
 
     return(
       <div className="new-question-container">
         <div className="content">
           <h1 className="question-top-title">{first_half}</h1>
+            <div>{this.editHeaderMessage()}</div>
           <br/>
         </div>
         <div className="question-body">

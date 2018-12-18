@@ -1,5 +1,6 @@
 .splash-login-form{
-  width: 400px;
+  width: 325px;
+  align-items: left;
 }
 
 .splash-signup-container{
@@ -24,14 +25,18 @@ input.splash-login-input{
 
 }
 
-input[type=submit].splash-session-submit{
+.splash-session-submit{
   margin-left: 16px;
-  background: #07c;
+  border-color: #07c;
+  background: #0095ff;
   color: white;
-  border: 1px solid white;
+  border: 1px solid transparent;
   border-radius: 3px;
   height: 2rem;
   padding: 2px;
+  box-shadow: inset 0 1px 0 #66bfff;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 0.75em;
 }
 
 input.splash-login-input:hover, input.splash-login-input:focus{
@@ -91,8 +96,36 @@ div.splash-form-text{
   overflow: scroll;
 }
 
+.link-button {
+  border-color: #07c;
+  max-width: 6em;
+  min-width: 6em;
+  max-height: 1.3em;
+  width: 72px;
+  box-shadow: inset 0 1px 0 0 rgba(102,191,255,0.75), 0 0 0 0 rgba(0,149,255,0);
+  color: #FFF;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: .8em;
+  margin-right: 70px;
+  margin-left: 50px;
+
+  overflow-wrap: unset;
+  outline: none;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 0.75em;
+  font-weight: 400;
+  cursor: pointer;
+}
+
 .splash-explanation-text p {
   max-width: 500px;
+}
+
+.logged-in-splash {
+  width: 500px;
+  height: 500px;
 }
 
 @media screen and (max-width: 700px){
