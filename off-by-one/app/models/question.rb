@@ -18,7 +18,9 @@ class Question < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
-  # has_many :answers
+  has_many :answers,
+    foreign_key: :question_id,
+    class_name: :Answer
   # has_many :votes
 
   def self.in_bounds(bounds)
