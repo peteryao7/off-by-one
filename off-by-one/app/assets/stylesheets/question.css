@@ -132,6 +132,7 @@
   color: #07C;
   line-height: 1.3;
   padding: 1em;
+  cursor: pointer;
 }
 
 .index-item-footer {

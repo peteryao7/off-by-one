@@ -3,7 +3,6 @@ class Api::QuestionsController < ApplicationController
 
   def index
     @questions = Question.all;
-    # @total_questions_in_bounds = Question.total_in_bounds(bounds)
     render :index
   end
 
@@ -46,9 +45,9 @@ class Api::QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:author_id, :title, :body)
   end
-
-  def bounds
-    params[:bounds]
-  end
+  # 
+  # def bounds
+  #   params[:bounds]
+  # end
 
 end
