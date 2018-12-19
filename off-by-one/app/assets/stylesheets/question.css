@@ -75,18 +75,25 @@
   float: left;
   display: inline-flex;
   margin-top: 20px;
+  padding-left: 14px;
 }
 
 .question-body-footer{
   display: flex;
+  justify-content: space-between;
   font-size: 10px;
+  padding-left: 14px;
+}
+
+.author {
+  padding-right: 70px;
 }
 
 .error-question-page {
   padding: 30px;
   padding-bottom: 360px;
 }
-.error-question, .error-question-message, .no-question-link {
+.error-question, .error-question-message, .error-link-page, .no-question-link {
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
@@ -97,4 +104,44 @@
 .no-question-link {
   color: blue;
   text-decoration: underline;
+}
+
+.question-list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid silver;
+}
+
+.question-list-header h1 {
+  font-size: 24px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.question-index-item {
+  border-bottom: 1px solid #eff0f1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.index-item-title {
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 14px;
+  color: #07C;
+  line-height: 1.3;
+  padding: 1em;
+}
+
+.index-item-footer {
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  line-height: 0.5;
+  font-size: 12px;
+  padding: 0.5em;
+  padding-right: 10px;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-self: flex-end;
 }

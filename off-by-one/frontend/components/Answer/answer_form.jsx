@@ -19,6 +19,7 @@ class AnswerForm extends React.Component {
     this.navigateToShow = this.navigateToShow.bind(this);
   }
 
+  //formData (deprecated)
   componentWillReceiveProps(nextProps){
     if(this.props.formType === 'Edit' && nextProps.answer){
       this.setState({
@@ -67,7 +68,7 @@ class AnswerForm extends React.Component {
       <div>
         <div className="header-section">
           <div className="question-index-header">
-            <h1 className="question-title">{header}</h1>
+            <h1 className="answer-title">{header}</h1>
           </div>
         </div>
 
@@ -104,21 +105,27 @@ class AnswerForm extends React.Component {
     }
   }
 
-
   render(){
     const { title, body } = this.state;
+    let buttonText;
+
+    if (this.props.formType === 'Answer') {
+      buttonText = "Post Your Answer";
+    } else if (this.props.formType === 'Edit') {
+      buttonText = "Save Edits";
+    }
     return(
-      <div className="new-question-container">
+      <div className="new-answer-container">
         {this.answerQuestion(
           <form onSubmit={this.handleSubmit}>
-            <label className="question-field">
+            <label className="answer-field">
               Body
               <br />
               <div className="question-text-input-area">
                 <textarea
                   value={body}
                   onChange={this.update('body')}
-                  className="question-input-field"
+                  className="answer-input-field"
                   />
               </div>
             </label>
@@ -127,8 +134,8 @@ class AnswerForm extends React.Component {
               <div className="right-error-group">
                 {this.state.buttonErrors.map(e =>`${e} `)}
               </div>
-              <input type="submit" value={`${this.props.formType}`}
-                className="new-question-button" />
+              <input type="submit" value={`${buttonText}`}
+                className="new-answer-button" />
             </div>
           </form>
         )}

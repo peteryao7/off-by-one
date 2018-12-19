@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import SplashSignupContainer from './splash_container';
-import QuestionIndexContainer from '../Question/question_index'
-const RenderSplash = ({user}) => {
+import QuestionIndexContainer from '../Question/question_index_container'
+const RenderSplash = (props) => {
 
-  if(!user)
+  if(!props.currentUser)
   {
     return (
+      <div>
       <div className="splash-page">
           <div className="splash-explanation-text">
             <h3>Learn, Share, Build</h3>
@@ -17,13 +18,16 @@ const RenderSplash = ({user}) => {
             </p>
           </div>
         <SplashSignupContainer />
-      </div>)
-  } else return (
+      </div>
+      <div>
+        <QuestionIndexContainer />
+      </div>
+    </div>)
+  } else { return (
     <div>
-      <Link to="/questions/ask" className="link-button">Ask Question</Link>
       <QuestionIndexContainer />
     </div>
-  )
+  ) }
 }
 
 export default RenderSplash;

@@ -15,6 +15,7 @@ class QuestionShow extends React.Component{
   }
 
   componentDidMount(){
+    window.scrollTo(0,0);
     this.props.fetchQuestion(this.props.questionId);
     this.props.fetchAnswers({question_id: this.props.questionId});
   }
@@ -44,7 +45,7 @@ class QuestionShow extends React.Component{
   // by { this.props.question.user ? this.props.question.user.username : '__'}
 
   render() {
-    // debugger
+
     if (this.props.question.title) {
 
       return(
@@ -66,15 +67,19 @@ class QuestionShow extends React.Component{
           </div>
 
         <div className="question-body-footer">
-          <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>&nbsp;&nbsp;&nbsp;
-          <button onClick={this.deleteQuestion} className="footer-button">
-            delete
-          </button>
+
+          <div className="edit-delete-buttons">
+            <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>&nbsp;&nbsp;&nbsp;
+            <button onClick={this.deleteQuestion} className="footer-button">
+              delete
+            </button>
+          </div>
+          &nbsp;
           <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
 
           &nbsp;&nbsp;&nbsp;
-          <div className="author"> asked on { this.props.question.created_at }&nbsp;
-            by { this.props.question.user ? this.props.question.user.username : '__'}
+          <div className="author"> asked on { this.props.question.created_at.slice(0, 10) }&nbsp;
+            by { this.props.question.authorName ? this.props.question.authorName : '__'}
           </div>
         </div>
 
@@ -84,9 +89,9 @@ class QuestionShow extends React.Component{
       </div>
     ) } else {
       return (<div className="error-question-page">
-      <div className="error-question"> ERROR 404 </div> <br />
-      <div className="error-question-message"> No question exists! </div> <br />
-      <Link to="/" className="no-question-link"> Back to homepage.</Link> <br />
+      <div className="error-question"> Page Not Found </div> <br />
+      <div className="error-question-message"> We're sorry, we couldn't find the page you requested. </div> <br />
+      <div className="error-link-page"> Browse our <Link to="/" className="no-question-link">recent questions</Link> </div><br />
       </div>)
     }
   }

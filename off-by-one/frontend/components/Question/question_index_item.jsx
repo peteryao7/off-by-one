@@ -14,20 +14,16 @@ class IndexItem extends React.Component {
   }
 
   render() {
-    const { title, body, user, updated_at } = this.props.question;
+    const { title, created_at } = this.props.question;
     return (
         <div className="question-index-item" onClick={this.handleClick}>
           <div className="index-item-title">{title || "No title!"}</div>
           <div className="index-item-footer">
             <div className="index-footer-text">
-              by {user ? user.username : "anon"}
+              asked on { created_at.slice(0,10) } by { this.props.author ? this.props.author : "anon"}
             </div>
           </div>
         </div>)
   }
 }
 export default withRouter(IndexItem);
-
-// <div className="index-footer-text">
-//   modified {timeSinceUpdate(updated_at)} hr:min:secs ago
-// </div>

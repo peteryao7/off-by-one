@@ -12,7 +12,7 @@ import QuestionIndexContainer from './Question/question_index_container';
 import Header from './Header/header';
 import LeftSidebar from './LeftSidebar/left_sidebar'
 import FooterContainer from './Footer/footer_container'
-import RenderSplash from './Splash/splash.jsx'
+import RenderSplashContainer from './Splash/render_splash_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
@@ -35,7 +35,7 @@ const App = () => (
           <Route exact path="/jobs" component={JobsContainer} />
           <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
           <Route exact path="/questions" component={QuestionIndexContainer} />
-          <AuthRoute exact path ="/" component={RenderSplash} />
+          <Route exact path ="/" component={RenderSplashContainer} />
           <Redirect to="/login" />
         </Switch>
         <FooterContainer />
