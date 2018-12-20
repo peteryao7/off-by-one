@@ -4,8 +4,9 @@ import {updateAnswer} from '../../actions/answer_actions';
 import AnswerForm from './answer_form';
 
 const mapStateToProps = (state, { user, answer }) => {
+  const userNew = user || {}
   return {
-    authorId: user.id,
+    authorId: userNew.id,
     answerId: answer.id,
     questionId: answer.question_id,
     formType: 'Edit',

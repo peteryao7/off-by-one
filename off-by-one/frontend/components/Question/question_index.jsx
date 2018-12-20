@@ -2,6 +2,7 @@ import React from 'react';
 import IndexItem from './question_index_item';
 import { questionsArray } from '../../reducers/selectors';
 import { Link } from 'react-router-dom';
+import RightSidebar from '../RightSidebar/right_sidebar';
 
 // componentDidMount()
 
@@ -20,10 +21,13 @@ class QuestionIndex extends React.Component {
       return (
         <div className="all-questions-list">
 
-        <div className="question-list-header">
-          <h1> Top Questions </h1>
-          <Link to="/questions/ask" className="link-button-splash">Ask Question</Link>
-        </div>
+        <div className="questions-and-right-sidebar">
+        <div className="question-header-and-questions">
+
+          <div className="question-header-top-button">
+            <h1>Top Questions</h1>
+            <Link to="/questions/ask" className="link-button-splash">Ask Question</Link>
+          </div>
 
         <div className="questions-list">
           {this.props.questions.map(question => (
@@ -46,6 +50,9 @@ class QuestionIndex extends React.Component {
       ) : (
         <></>
       )}
+    </div>
+    </div>
+    <RightSidebar />
     </div>
     </div>
   );

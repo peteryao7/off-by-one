@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
 import NewAnswerFormContainer from '../Answer/new_answer_form_container';
-
+import AnswerIndex from '../Answer/answer_index';
+import RightSidebar from '../RightSidebar/right_sidebar'
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -36,14 +37,6 @@ class QuestionShow extends React.Component{
     }
   }
 
-
-  // <div className="one-em-padding"></div>
-  // posted {timeSinceUpdate(this.props.question.created_at)} hr:min:secs ago
-  // <div className="one-em-padding"></div>
-  // on {this.props.question.created_at}
-  // <div className="one-em-padding"></div>
-  // by { this.props.question.user ? this.props.question.user.username : '__'}
-
   render() {
 
     if (this.props.question.title) {
@@ -56,7 +49,7 @@ class QuestionShow extends React.Component{
             <div className="question-index-header">
               <h1 className="question-title-show">{this.props.question.title}</h1>
             </div>
-            <Link to="/questions/ask" className="link-button">Ask Question</Link>
+            <Link to="/questions/ask" className="link-button-splash">Ask Question</Link>
           </div>
 
           <div className="question-body">
@@ -82,7 +75,7 @@ class QuestionShow extends React.Component{
             by { this.props.question.authorName ? this.props.question.authorName : '__'}
           </div>
         </div>
-
+        <AnswerIndex answers={this.props.answers}/>
         <NewAnswerFormContainer questionId={this.props.questionId} />
 
         </div>

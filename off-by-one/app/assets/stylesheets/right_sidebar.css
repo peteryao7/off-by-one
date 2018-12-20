@@ -1,0 +1,16 @@
+.right-sidebar{
+  height: 40%;
+  width: 230px;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #eff0f1;
+  margin-left: 30px;
+  margin-right: 40px;
+}
+
+.features {
+  color: #242729;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}

@@ -29,11 +29,6 @@ class SplashSignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  componentDidUpdate (prevProps) {
-    if (prevProps.errors !== this.props.errors)
-      while (this.props.errors.length > 0) {this.props.errors.pop();}
-  }
-
   componentWillReceiveProps (nextProps) {
     if (nextProps.errors !== this.props.errors)
       while (this.props.errors.length > 0) {this.props.errors.pop();}
@@ -54,6 +49,8 @@ class SplashSignupForm extends React.Component {
   render() {
     return (
       <div className="splash-signup-container">
+
+        <div className="splash-right">
         <form onSubmit={this.handleSubmit}>
           <br/>
           <div className="splash-login-form">
@@ -86,15 +83,21 @@ class SplashSignupForm extends React.Component {
                 />
             </label>
             <br/>
+
             <input className="splash-session-submit" type="submit" value={this.props.formType} />
+
           </div>
+          <br/>
+
         </form>
-        <div className="inner-error" >
-          <div className="login-signup-errors-splash">
-            {this.renderErrors()}
-          </div>
+
+        <div className="login-signup-errors-splash">
+          {this.renderErrors()}
         </div>
+        </div>
+
       </div>
+
     );
   }
 }

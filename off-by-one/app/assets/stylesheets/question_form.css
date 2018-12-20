@@ -12,12 +12,13 @@
 }
 
 .question-body {
-  width: 92%;
-  border-bottom: 1px solid #eff0f1;
+  padding: 0.3em 0.3em 0.7em 0.3em;
+  word-wrap: break-word;
+
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 30px;
 }
 
 .title-label, .body-label {
@@ -27,8 +28,6 @@
 }
 
 .title-input-field{
-  /* background: green; */
-
   width: 100%;
   height: 100%;
   margin: 0;

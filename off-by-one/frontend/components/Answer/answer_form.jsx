@@ -81,6 +81,10 @@ class AnswerForm extends React.Component {
     );
   }
 
+  componentDidUpdate() {
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.authorId){
@@ -100,8 +104,8 @@ class AnswerForm extends React.Component {
       }
       this.navigateToShow();
     } else {
-      this.setState({['buttonErrors']:["must be logged in to answer questions"]});
-      window.setTimeout(() => this.setState({['buttonErrors']:[]}), 4000);
+      this.setState({['buttonErrors']:["You must be logged in to answer questions."]});
+      window.setTimeout(() => this.setState({['buttonErrors']:[]}), 1000);
     }
   }
 

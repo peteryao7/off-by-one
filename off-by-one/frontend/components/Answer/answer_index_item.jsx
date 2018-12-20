@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
-import AnswerShowContainer from '../answer_show/answer_show_container';
+import AnswerShowContainer from './answer_show_container';
 
 class IndexItem extends React.Component {
   constructor(props) {

@@ -17,12 +17,23 @@ class IndexItem extends React.Component {
     const { title, created_at } = this.props.question;
     return (
         <div className="question-index-item" onClick={this.handleClick}>
+
+        <div className="question-answer-count">
+        <div className="question-answer-num">
+        {this.props.question.answer_count}
+        </div>
+        <div className="question-answer-text">
+        answers
+        </div>
+        </div>
+
+        <div className="index-item-right">
+
           <div className="index-item-title">{title || "No title!"}</div>
           <div className="index-item-footer">
-            <div className="index-footer-text">
               asked on { created_at.slice(0,10) } by { this.props.author ? this.props.author : "anon"}
-            </div>
           </div>
+        </div>
         </div>)
   }
 }

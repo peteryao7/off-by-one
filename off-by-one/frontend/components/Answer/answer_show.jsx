@@ -22,7 +22,7 @@ class AnswerShow extends React.Component{
 
   removeAnswer(e){
     e.preventDefault();
-    if(this.props.user && this.props.answer.user_id === this.props.user.id)
+    if(this.props.user && this.props.user.username === this.props.answer.authorName)
     {
       this.props.deleteAnswer(this.props.answerId);
     } else {
@@ -49,23 +49,24 @@ class AnswerShow extends React.Component{
       user={this.props.user}
       answer={this.props.answer}
       resetRenderEditState={this.resetRenderEditState}
-      /> : <div></div>
+      />
+      : <div></div>
 
     const deleteButton =
-      this.props.user && this.props.user.id === this.props.answer.user_id ?
+      this.props.user && (this.props.user.username === this.props.answer.authorName) ?
       (<button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
         delete
       </button>) : null;
 
-    return (<div>
+    return (
         <div className="float-display">
-          <div className="question-body">
+          <div className="answer-body">
             {editForm}
             {this.props.answer.body}
 
             <br />
             <br />
-            <div className="question-body-footer">
+            <div className="answer-body-footer">
               <div className="right-error-group">
                 {this.state.editButtonErrors.map(e => `${e} `)}
               </div>
@@ -76,15 +77,15 @@ class AnswerShow extends React.Component{
               <div className="error-group">
                 {this.state.deleteButtonErrors.map(e => `${e} `)}
               </div>
+              <div className="one-em-padding" />
               {deleteButton}
               <div className="one-em-padding" />
-              on {this.props.answer.created_at}
+              posted on {this.props.answer.created_at}
               <div className="one-em-padding" />
-              by {this.props.answer.user ? this.props.answer.user.username : "__"}
+              by {this.props.answer.authorName ? this.props.answer.authorName : "__"}
             </div>
           </div>
-        </div>
-      </div>)
+        </div>)
   }
 }
 

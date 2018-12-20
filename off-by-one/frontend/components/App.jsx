@@ -25,6 +25,7 @@ const App = () => (
         <LeftSidebar />
 
       <div className="main-div">
+        <div className="main-and-right-sidebar-page">
         <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -38,8 +39,10 @@ const App = () => (
           <Route exact path ="/" component={RenderSplashContainer} />
           <Redirect to="/login" />
         </Switch>
-        <FooterContainer />
+        </div>
+      <FooterContainer />
       </div>
+
     </div>
   </div>
 );
