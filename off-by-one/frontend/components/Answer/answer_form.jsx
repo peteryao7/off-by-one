@@ -87,7 +87,7 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.authorId){
+    if (this.props.authorId){
       if(this.props.formType === 'Edit'){
         this.props.answerAction({
           id: this.state.id,

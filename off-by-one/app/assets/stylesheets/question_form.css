@@ -39,6 +39,8 @@
   line-height: 1.02366864;
   resize: none;
   cursor: auto;
+
+  font-weight: normal;
 }
 
 .body-input-field {
@@ -55,6 +57,7 @@
   cursor: auto;
   min-height: 50px;
   /* background: pink; */
+  font-weight: normal;
 }
 
 .new-question-button {

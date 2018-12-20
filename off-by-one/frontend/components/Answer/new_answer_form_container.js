@@ -5,6 +5,7 @@ import AnswerForm from './answer_form';
 
 const mapStateToProps = (state, {questionId}) => ({
   user: state.entities.users[state.session.id],
+  authorId: state.session.id,
   questionId: questionId,
   formType: 'Answer'
 });

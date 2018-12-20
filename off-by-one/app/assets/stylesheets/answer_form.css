@@ -28,6 +28,7 @@
   resize: vertical;
   cursor: auto;
   min-height: 50px;
+  font-weight: normal;
 }
 
 .new-answer-button {

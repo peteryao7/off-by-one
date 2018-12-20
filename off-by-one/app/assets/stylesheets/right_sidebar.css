@@ -2,13 +2,13 @@
   height: 40%;
   width: 280px;
   margin: 5px;
-  margin-left: 50px;
+  margin-left: 20px;
   margin-right: 60px;
 }
 
 .featured-links {
   margin-top: 15px;
-  border: 1px solid #eff0f1;
+  border: 1px solid silver;
   padding: 10px;
   width: 100%;
 }
