@@ -71,8 +71,7 @@ class QuestionShow extends React.Component{
           <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
 
           &nbsp;&nbsp;&nbsp;
-          <div className="author"> asked on { this.props.question.created_at.slice(0, 10) }&nbsp;
-            by { this.props.question.authorName ? this.props.question.authorName : '__'}
+          <div className="author"> asked on { this.props.question.created_at.slice(0, 10) } by { this.props.question.authorName ? this.props.question.authorName : '__'}
           </div>
         </div>
         <AnswerIndex answers={this.props.answers}/>

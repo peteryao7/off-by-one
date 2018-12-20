@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
+    // must do these ternary checks to autofill values if formType=edit
     let questionId = this.props.question ? this.props.question.id : null;
     let title = this.props.question ? this.props.question.title : '';
     let body = this.props.question ? this.props.question.body : '';
@@ -49,6 +50,7 @@ class QuestionForm extends React.Component {
     else return (<div></div>);
   }
 
+
   render(){
     const { title, body } = this.state;
 
@@ -61,6 +63,7 @@ class QuestionForm extends React.Component {
     } else if (this.props.formType === 'Edit') {
       buttontext = "Edit";
     }
+
 
     return(
       <div className="new-question-container">

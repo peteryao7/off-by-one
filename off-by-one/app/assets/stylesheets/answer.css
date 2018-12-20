@@ -2,23 +2,67 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #eff0f1;
+
+}
+
+.answer-index-header-total{
+  padding-top: 20px;
+  padding-left: 14px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eff0f1;
+
+
+  font-size: 20px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  vertical-align: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer-index-header{
+  padding-top: 10px;
+  padding-left: 14px;
+
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  vertical-align: baseline;
+  display: flex;
+  justify-content: space-between;
 }
 
 .answer-body {
   word-wrap: break-word;
+  border-bottom: 1px solid #eff0f1;
 
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.answer-body-text {
+
+}
+
+.answer-edit-delete {
+  display: flex;
+  padding-left: 14px;
 }
 
 .answer-body-footer {
   display: flex;
-  justify-content: space-around;
-  font-size: 10px;
+  justify-content: space-between;
+  font-size: 12px;
   width: 100%;
-  border-bottom: 1px solid #eff0f1;
   padding-bottom: 5px;
+}
+
+.answer-date-user {
+  display: flex;
+}
+
+.padding {
+  padding-left: 15px;
 }

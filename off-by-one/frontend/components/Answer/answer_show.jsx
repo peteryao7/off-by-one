@@ -27,7 +27,7 @@ class AnswerShow extends React.Component{
       this.props.deleteAnswer(this.props.answerId);
     } else {
       this.setState({ ['deleteButtonErrors']: ['cannot delete other users\' answers' ]});
-      // window.setTimeout(() => this.setState({['deleteButtonErrors']: []}), 4000);
+      window.setTimeout(() => this.setState({['deleteButtonErrors']: []}), 2000);
     }
   }
 
@@ -37,7 +37,7 @@ class AnswerShow extends React.Component{
       this.setState({['renderEdit']: true});
     } else {
       this.setState({ ['editButtonErrors']: ['must be logged in to edit answers' ]});
-      // window.setTimeout(() => this.setState({['editButtonErrors']: []}), 4000);
+      window.setTimeout(() => this.setState({['editButtonErrors']: []}), 2000);
     }
   }
   resetRenderEditState(){
@@ -62,27 +62,35 @@ class AnswerShow extends React.Component{
         <div className="float-display">
           <div className="answer-body">
             {editForm}
+            <div className="answer-body-text">
             {this.props.answer.body}
+            </div>
 
             <br />
             <br />
             <div className="answer-body-footer">
+
+
+              <div className="answer-edit-delete">
+                <button onClick={e=>this.editAnswer(e)} className="footer-button">
+                  improve this answer
+                </button>
+                <div className="padding" />
+                <div className="error-group">
+                  {this.state.deleteButtonErrors.map(e => `${e} `)}
+                </div>
+                {deleteButton}
+              </div>
+
               <div className="right-error-group">
                 {this.state.editButtonErrors.map(e => `${e} `)}
               </div>
-              <button onClick={e => this.editAnswer(e)} className="footer-button">
-                improve this answer
-              </button>
-              <div className="one-em-padding" />
-              <div className="error-group">
-                {this.state.deleteButtonErrors.map(e => `${e} `)}
+
+              <div className="answer-date-user">
+                <div className="padding" />
+                posted on {this.props.answer.created_at.slice(0,10)} by {this.props.answer.authorName ? this.props.answer.authorName : "__"}
               </div>
-              <div className="one-em-padding" />
-              {deleteButton}
-              <div className="one-em-padding" />
-              posted on {this.props.answer.created_at}
-              <div className="one-em-padding" />
-              by {this.props.answer.authorName ? this.props.answer.authorName : "__"}
+
             </div>
           </div>
         </div>)

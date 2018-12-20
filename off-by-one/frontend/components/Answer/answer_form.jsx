@@ -67,7 +67,7 @@ class AnswerForm extends React.Component {
     return (
       <div>
         <div className="header-section">
-          <div className="question-index-header">
+          <div className="answer-index-header">
             <h1 className="answer-title">{header}</h1>
           </div>
         </div>
@@ -81,8 +81,8 @@ class AnswerForm extends React.Component {
     );
   }
 
-  componentDidUpdate() {
-
+  componentDidUpdate(nextProps) {
+    // this.props.user = this.nextProps.user;
   }
 
   handleSubmit(e) {
@@ -94,6 +94,7 @@ class AnswerForm extends React.Component {
           question_id: this.state.questionId,
           body: this.state.body,
         });
+        this.props.resetRenderEditState();
       } else {
         const formData = new FormData();
         formData.append('answer[id]', this.state.id);

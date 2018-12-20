@@ -119,6 +119,7 @@
 
 .alt-login-signup-message {
   /* padding: 30px 40px 30px 40px; */
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   margin-top: 10px;
   border: 1px solid silver;
   border-radius: 5px;

@@ -132,20 +132,20 @@
   float: left;
   display: inline-flex;
   margin-top: 20px;
-  padding-left: 14px;
+  padding-left: 20px;
 }
 
 .question-body-footer{
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
   padding-left: 14px;
   width: 100%;
-  border-bottom: 1px solid #eff0f1;
+  padding-bottom: 5px;
 }
 
 .author {
-  padding-right: 70px;
+  padding-right: 14px;
 }
 
 .error-question-page {
@@ -200,4 +200,8 @@
   /* flex-direction: row; */
   /* text-align: right; */
   float: right;
+}
+
+.edit-delete-buttons {
+  padding-left: 30px;
 }
