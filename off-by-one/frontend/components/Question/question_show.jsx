@@ -16,7 +16,6 @@ class QuestionShow extends React.Component{
   }
 
   componentDidMount(){
-    window.scrollTo(0,0);
     this.props.fetchQuestion(this.props.questionId);
     this.props.fetchAnswers({question_id: this.props.questionId});
   }

@@ -110,6 +110,21 @@ class AnswerForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    // debugger
+    if (this.props.formType === 'Answer') {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else return (<div></div>)
+  }
+
   render(){
     const { title, body } = this.state;
     let buttonText;
@@ -124,8 +139,6 @@ class AnswerForm extends React.Component {
         {this.answerQuestion(
           <form onSubmit={this.handleSubmit}>
             <label className="answer-field">
-              Body
-              <br />
               <div className="question-text-input-area">
                 <textarea
                   value={body}
@@ -144,6 +157,9 @@ class AnswerForm extends React.Component {
             </div>
           </form>
         )}
+        <div className="answer-errors">
+          {this.renderErrors()}
+        </div>
       </div>
     );
   }

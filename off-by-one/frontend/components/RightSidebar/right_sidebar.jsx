@@ -68,8 +68,12 @@ const RightSidebar = navLinks => (
           <li className="qs-li">
             How to close connection from mongodb to springboot once connection stablish
           </li>
-
-
+          <li className="qs-li">
+            Changing mind after rejecting a job offer
+          </li>
+          <li className="qs-li">
+            Unable to find source java class while developing plugin for cordova (Android)
+          </li>
 
         </ul>
       </div>

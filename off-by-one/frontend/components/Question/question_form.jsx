@@ -22,6 +22,11 @@ class QuestionForm extends React.Component {
     this.props.history.push(`/questions/${this.state.id}`);
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.errors !== this.props.errors)
+    while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
   update(property){
     return e => this.setState({
       [property]: e.target.value
@@ -48,6 +53,21 @@ class QuestionForm extends React.Component {
       <br/><br/>
       We welcome all constructive edits, but please make them substantial. Avoid trivial edits unless absolutely necessary.</h1>);
     else return (<div></div>);
+  }
+
+  renderErrors() {
+    // debugger
+    if (this.props.formType === 'new') {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else return (<div></div>)
   }
 
 
@@ -104,6 +124,9 @@ class QuestionForm extends React.Component {
             <input type="submit" value={`${buttontext} Question`}
               className="new-question-button" />
           </form>
+          </div>
+          <div className="question-errors">
+            {this.renderErrors()}
           </div>
       </div>
     );

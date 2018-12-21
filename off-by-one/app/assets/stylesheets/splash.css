@@ -1,5 +1,5 @@
 .splash-login-form{
-  width: 425px;
+  width: 300px;
   align-items: left;
   margin-right: 30px;
   margin-bottom: 30px;
@@ -117,11 +117,27 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   padding-top: 5%;
   padding-bottom: 10%;
   text-shadow: 0 0 4px black;
-  width: 60%;
+  width: 100%;
   height: 60%;
 }
 
-.splash-explanation-text h3 { font-size: 22px;}
+.splash-explanation-text h3 {
+  font-size: 22px;
+}
+
+.splash-explanation-text p {
+  width: 100%;
+}
+
+@media screen and (max-width: 700px){
+  .splash-signup-container, .splash-login-form{
+    display: none;
+  }
+
+  .splash-explanation-text {
+    width: 90%;
+  }
+}
 
 div.splash-form-text{
   font-size:14px;
@@ -170,10 +186,6 @@ div.splash-form-text{
   font-size: 0.75em;
   font-weight: 400;
   cursor: pointer;
-}
-
-.splash-explanation-text p {
-  max-width: 500px;
 }
 
 .logged-in-splash {
