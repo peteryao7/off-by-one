@@ -5,15 +5,14 @@
 Off By One is a full stack Q&amp;A application inspired by Stack Overflow. Users may ask, answer and edit questions and answers pertaining to a range of topics, including computer programming, mathematics, and game development.
 
 # Technologies Used
-* React
-* Redux
-* HTML
-* CSS
-* JavaScript
-* Ruby
-* Rails
-* PostgreSQL
-* Webpack
+* React - a JavaScript library used for the front end
+* Redux - a state container used in conjunction with React
+* HTML - determine structure of a page
+* CSS - styles a page
+* JavaScript - used to manipulate HTML and CSS
+* Ruby on Rails - our web application framework written in Ruby to serve as our back end
+* PostgreSQL - our database management system
+* Webpack - module bundler for our JavaScript application
 
 # Screenshots
 
