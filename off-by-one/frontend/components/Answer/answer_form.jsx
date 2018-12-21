@@ -105,8 +105,8 @@ class AnswerForm extends React.Component {
       }
       this.navigateToShow();
     } else {
-      this.setState({['buttonErrors']:["You must be logged in to answer questions."]});
-      window.setTimeout(() => this.setState({['buttonErrors']:[]}), 1000);
+      this.setState({['buttonErrors']:["Submission failed. Please log in to answer questions."]});
+      window.setTimeout(() => this.setState({['buttonErrors']:[]}), 2000);
     }
   }
 

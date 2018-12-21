@@ -15,6 +15,8 @@ const RenderSplash = (props) => {
               Each month, over 50 million developers come to Off By One to
               learn, share their knowledge, and build their careers.
               Join the world’s largest developer community.
+              <br/> <br/>
+              Off By One Business Solutions: Looking to understand, engage, or hire developers? Learn more!
             </p>
           </div>
         <SplashSignupContainer />

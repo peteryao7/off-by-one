@@ -2,7 +2,8 @@
   width: 300px;
   align-items: left;
   margin-right: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  /* margin-bottom: 30px; */
 }
 
 .login-signup-errors-splash {
@@ -18,6 +19,7 @@
 
 .login-signup-errors-splash ul {
   background: #C04848;
+  margin-top: 15px;
 }
 
 .login-signup-errors-splash li {
@@ -74,6 +76,7 @@ input.splash-login-input{
 
 .splash-session-submit{
   margin-left: 16px;
+  margin-top: 10px;
   border-color: #07c;
   background: #0095ff;
   color: white;
@@ -119,6 +122,8 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   text-shadow: 0 0 4px black;
   width: 100%;
   height: 60%;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
 }
 
 .splash-explanation-text h3 {
