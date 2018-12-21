@@ -11,13 +11,15 @@ const RenderSplash = (props) => {
       <div className="splash-page">
           <div className="splash-explanation-text">
             <h3>Learn, Share, Build</h3>
-            <p>
+            <div className="splash-top-message">
               Each month, over 50 million developers come to Off By One to
               learn, share their knowledge, and build their careers.
+              <br/><br/>
               Join the world’s largest developer community.
-              <br/> <br/>
+            </div>
+            <div className="splash-bottom-message">
               Off By One Business Solutions: Looking to understand, engage, or hire developers? Learn more!
-            </p>
+            </div>
           </div>
         <SplashSignupContainer />
       </div>

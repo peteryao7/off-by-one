@@ -57,7 +57,7 @@
   /* margin-right: 164px; */
   /* width: 100vw-164px; */
   width: 100%;
-  height: 425px;
+  height: 400px;
   display: flex;
   background-image: url("https://jooinn.com/images/blue-background-13.jpg");
   /* width: 87.9vw; */
@@ -117,12 +117,16 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   color: white;
   padding-left: 10%;
   padding-right: 42px;
-  padding-top: 5%;
+  padding-top: 3%;
   padding-bottom: 10%;
   text-shadow: 0 0 4px black;
   width: 100%;
   height: 60%;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -130,11 +134,11 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   font-size: 22px;
 }
 
-.splash-explanation-text p {
-  width: 100%;
+.splash-top-message {
+  padding-bottom: 90px;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 900px){
   .splash-signup-container, .splash-login-form{
     display: none;
   }

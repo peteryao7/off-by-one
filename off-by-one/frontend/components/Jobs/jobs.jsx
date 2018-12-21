@@ -5,7 +5,7 @@ const Jobs = () => (
     <div className="main-content">
       <div className="center-text-page">
         <h1>No jobs available until January 23rd, 2018.</h1>
-        <h2>Please come back until then!</h2>
+        <h2>Please check back until then!</h2>
       </div>
 
 

@@ -65,8 +65,6 @@ class AnswerShow extends React.Component{
             <div className="answer-body-text">
             {this.props.answer.body}
             </div>
-
-            <br />
             <br />
             <div className="answer-body-footer">
 
