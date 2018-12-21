@@ -46,6 +46,7 @@ class SessionForm extends React.Component {
     let welcomeMessage;
     let endMessage;
     let endButton;
+    let signupAgree;
 
     if(this.props.formType === 'signup') {
       emailInput = (
@@ -69,6 +70,11 @@ class SessionForm extends React.Component {
       )
       endButton = (
         <input className="signup-submit" type="submit" value="Sign up" />
+      )
+      signupAgree = (
+        <div>By clicking "Sign up", you acknowledge that you have read our
+        updated terms of service, privacy policy and cookie policy, and
+        that your continued use of the website is subject to these policies.</div>
       )
     } else if (this.props.formType === 'login'){
 
@@ -112,19 +118,25 @@ class SessionForm extends React.Component {
                   placeholder="********"
                 />
               {endButton}
+
+              <div className="signup-agree-message">
+                {signupAgree}
+              </div>
             </div>
           </form>
+
           <br/>
+        </div>
+
+
+        <div className="alt-login-signup-message">
+          {endMessage}
         </div>
 
         <div className="login-signup-errors">
           {this.renderErrors()}
         </div>
-
-        <div className="alt-login-signup-message">
-
-          {endMessage}
-        </div>
+        
       </div>
     );
   }
