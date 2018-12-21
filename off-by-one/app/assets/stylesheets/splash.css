@@ -138,6 +138,10 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   padding-bottom: 90px;
 }
 
+.splash-bottom-message {
+  font-size: 16px;
+}
+
 @media screen and (max-width: 900px){
   .splash-signup-container, .splash-login-form{
     display: none;

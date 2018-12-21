@@ -23,11 +23,11 @@ const LeftSidebar = navLinks => (
               </div>
             </Link>
         </li>
-        <li className="users-li">
-          Users
-        </li>
         <li className="tags-li">
           Tags
+        </li>
+        <li className="tags-li">
+          Users
         </li>
         <li className="jobs-li">
           <Link to="/jobs" className="grey-beige">

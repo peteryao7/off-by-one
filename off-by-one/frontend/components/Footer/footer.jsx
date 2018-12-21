@@ -112,7 +112,7 @@ const footer = () => {
             </li>
             <li>
               <a className="side-links" href="https://github.com/peteryao7" target="_blank">
-                Github
+                GitHub
               </a>
             </li>
           </ul>

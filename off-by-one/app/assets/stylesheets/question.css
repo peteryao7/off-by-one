@@ -35,7 +35,10 @@
   font-size: 11px;
   padding: 6px;
   border-radius: 3px;
-  padding-top: 15px;
+  padding-top: 18px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  color: #848d95;
+  width: 40px;
 }
 
 .question-index-header{
@@ -46,12 +49,6 @@
   vertical-align: baseline;
   display: flex;
   justify-content: space-between;
-}
-
-.question-answer-count {
-  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-  color: #848d95;
-  width: 40px;
 }
 
 .question-answer-num {
