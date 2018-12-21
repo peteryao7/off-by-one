@@ -26,6 +26,7 @@ class Header extends React.Component {
           </div>
           </a>
         </li>
+        <input className="nav-search-bar" type="text" placeholder="Search..."/>
         <GreetingContainer />
       </ul>
     </header>);

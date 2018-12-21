@@ -46,6 +46,10 @@
   cursor: pointer;
 }
 
+.link-button-splash:hover {
+  background-color: #07C;
+}
+
 .splash-signup-container{
   display: flex;
   align-items: center;
@@ -75,22 +79,25 @@ input.splash-login-input{
 }
 
 .splash-session-submit{
+
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 80;
   margin-left: 16px;
   margin-top: 10px;
   border-color: #07c;
-  background: #0095ff;
   color: white;
-  border: 1px solid transparent;
+  border: 1px solid white;
   border-radius: 3px;
   height: 2rem;
   padding: 2px;
-  box-shadow: inset 0 1px 0 #66bfff;
+  /* box-shadow: inset 0 1px 0 #66bfff; */
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-  font-size: 0.75em;
 }
 
 input.splash-login-input:hover, input.splash-login-input:focus{
-  border-left: 0.3px outset #9ec0d8ea;
+  border: 0.3px outset #9ec0d8ea;
 }
 
 .splash-form-label{
