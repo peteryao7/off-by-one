@@ -17,10 +17,10 @@ Off By One is a full stack Q&amp;A application inspired by Stack Overflow. Users
 # Screenshots
 
 The homepage
-![homepage](https://raw.githubusercontent.com/peteryao7/off-by-one/master/homepage.png)
+![homepage](https://raw.githubusercontent.com/peteryao7/off-by-one/master/off-by-one/homepage.png)
 
 The question page
-![question-page](https://raw.githubusercontent.com/peteryao7/off-by-one/master/question-show.png)
+![question-page](https://raw.githubusercontent.com/peteryao7/off-by-one/master/off-by-one/question-show.png)
 
 # Features
 CRUD functions were made to implement functionality in integrating questions and answers to the site. Users may create, retrieve and edit any question and answer on OBO and delete their own questions and answers. A visitor may browse their the full list of questions and view each question and answer, but will be required to log in to perform any other action on the site.
