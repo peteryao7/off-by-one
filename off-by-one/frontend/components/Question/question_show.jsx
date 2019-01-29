@@ -16,10 +16,11 @@ class QuestionShow extends React.Component{
   }
 
   componentDidMount(){
+    window.scrollTo(0,0);
     this.props.fetchQuestion(this.props.questionId);
     this.props.fetchAnswers({question_id: this.props.questionId});
     console.log("hi show should scroll");
-    window.scrollTo(0,0);
+    console.log("question show scroll end");
     // document.querySelector(".mdl-layout__content").scrollTop = 0;
 
   }
