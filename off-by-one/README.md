@@ -18,7 +18,7 @@ Off By One is a full stack Q&amp;A application inspired by Stack Overflow. Users
 
 Welcome to Off by One! Please run these commands to get the application up and running on your own machine.
 
-- `git clone` https://github.com/peteryao7/off-by-one
+- `git clone https://github.com/peteryao7/off-by-one`
 - `bundle install`
 - `npm install`
 - `bundle exec rails db:setup`
