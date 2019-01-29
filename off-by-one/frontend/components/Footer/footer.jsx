@@ -106,7 +106,7 @@ const footer = () => {
               </a>
             </li>
             <li>
-              <a className="side-links" href="" target="_blank">
+            <a className="side-links" href="https://www.linkedin.com/in/pyao7/" target="_blank">
                 LinkedIn
               </a>
             </li>
