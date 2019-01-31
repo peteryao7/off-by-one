@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import ReactDOM from "react-dom";
+
 import { ProtectedRoute} from '../../util/route_util';
 import NewAnswerFormContainer from '../Answer/new_answer_form_container';
 import AnswerIndex from '../Answer/answer_index';
@@ -16,19 +18,18 @@ class QuestionShow extends React.Component{
   }
 
   componentDidMount(){
-    window.scrollTo(0,0);
     this.props.fetchQuestion(this.props.questionId);
     this.props.fetchAnswers({question_id: this.props.questionId});
-    console.log("hi show should scroll");
-    console.log("question show scroll end");
-    // document.querySelector(".mdl-layout__content").scrollTop = 0;
-
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(oldProps) {
+    // ReactDOM.findDOMNode(this).scrollTop = 0;
     if (oldProps.match.params.questionId !== this.props.match.params.questionId) {
       this.props.fetchQuestion(this.props.questionId);
     }
+    window.scrollTo(0, 0);
+
   }
 
   deleteQuestion(){
@@ -47,6 +48,7 @@ class QuestionShow extends React.Component{
 
       return(
       <div className="content">
+
         <div className="single-question-show">
 
           <div className="header-section-question">

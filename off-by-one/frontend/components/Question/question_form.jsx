@@ -22,6 +22,10 @@ class QuestionForm extends React.Component {
     this.props.history.push(`/questions/${this.state.id}`);
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   componentDidUpdate (prevProps) {
     if (prevProps.errors !== this.props.errors)
     while (this.props.errors.length > 0) {this.props.errors.pop();}

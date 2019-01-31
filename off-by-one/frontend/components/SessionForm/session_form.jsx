@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   componentDidUpdate (prevProps) {
     if (prevProps.errors !== this.props.errors)
     while (this.props.errors.length > 0) {this.props.errors.pop();}

@@ -14,7 +14,7 @@ const LeftSidebar = navLinks => (
       <div className="space-li-header">
         <a className="home-link" href="/">Home</a>
       </div>
-      <div className="public-header grey-beige">PUBLIC</div>
+      <div className="public-header">PUBLIC</div>
       <ul className="public-ul">
         <li className="space-li">
         <Link to="/questions" className="grey-beige">

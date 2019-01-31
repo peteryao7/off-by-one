@@ -14,7 +14,7 @@ class QuestionIndex extends React.Component {
 
     componentDidMount() {
       this.props.fetchQuestions();
-      console.log("hey index should scroll");
+      console.log("question index should scroll up");
       window.scrollTo(0,0);
     }
 
